@@ -234,7 +234,7 @@ console.log('task 2', artists[8].name)
 function getArtistByIndex(array, index) {
   return `the artist at index ${artists[index].id} is ${artists[index].name}`;
 }  
-console.log('task 3', getArtistByIndex(artists, 0));
+console.log('task 3', getArtistByIndex(artists, 2));
 
 
 
@@ -248,15 +248,15 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
 function get20s(array){
-  const born20s = []
+  let born20s = []
   for(let i=0; i < array.length; i++){
-    if (parseInt(array[i].years) >= 1900 && parseInt(array[i].years) <= 2000){
+    if (array[i].years >= '1900' && array[i].years <= '2000'){
       born20s.push(array[i].name);
     }
   }
   return born20s
 }
-console.log(get20s(artists));
+console.log('task 4', get20s(artists));
 
 
 
@@ -269,15 +269,11 @@ console.log(get20s(artists));
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(array, index){
-  for(let i = 0; i < array.length; i++){
-    if(array[i] === index){
-      array.splice(i, 1);
-    }
-  }
- return array.length;
+ function removeArtist(array, index){
+  array.splice(index,1)
+  return array.length
 }
-console.log(removeArtist(artists,0));
+
    
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -306,7 +302,7 @@ function addArtist(array){
       bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`);
     return array;
   }
-console.log(addArtist(artists));
+console.log('task 6', addArtist(artists));
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -325,7 +321,7 @@ function lotsOfArt(array){
   }
  return mostArt
 }
-console.log(lotsOfArt(artists));
+console.log('task 7', lotsOfArt(artists));
 
 
 /* ***** END OF TASKS ***** */
